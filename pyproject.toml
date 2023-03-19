@@ -3,18 +3,6 @@ name = "whisper"
 version = "20230314"
 requires-python = ">=3.8"
 
-[project.optional-dependencies]
-dev = [
-    "black[jupyter]",
-    "isort",
-    "jupyter",
-    "tensorflow",
-    "pandas",
-    "torchaudio",
-    "jiwer",
-    "setuptools-rust",
-]
-
 [tool.black]
 
 [tool.isort]
