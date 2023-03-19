@@ -6,10 +6,8 @@ requires-python = ">=3.8"
 [project.optional-dependencies]
 dev = [
     "black[jupyter]",
-    "ipykernel",
-    "ipython",
     "isort",
-    "jupyterlab",
+    "jupyter",
     "tensorflow",
     "pandas",
     "torchaudio",
