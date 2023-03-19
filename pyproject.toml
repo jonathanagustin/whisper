@@ -1,3 +1,22 @@
+[project]
+name = "whisper"
+version = "20230314"
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = [
+    "black[jupyter]",
+    "ipykernel",
+    "ipython",
+    "isort",
+    "jupyterlab",
+    "tensorflow",
+    "pandas",
+    "torchaudio",
+    "jiwer",
+    "setuptools-rust",
+]
+
 [tool.black]
 
 [tool.isort]
@@ -5,4 +24,3 @@ profile = "black"
 include_trailing_comma = true
 line_length = 88
 multi_line_output = 3
-
