@@ -1,0 +1,56 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/miniconda:0-3",
+    "name": "whisper",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Alpha4.jsonl",
+                "DavidAnson.vscode-markdownlint",
+                "ms-python.black-formatter",
+                "ms-python.flake8",
+                "ms-python.isort",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter",
+                "mutantdino.resourcemonitor",
+                "VisualStudioExptTeam.intellicode-api-usage-examples",
+                "VisualStudioExptTeam.vscodeintellicode-completions",
+                "VisualStudioExptTeam.vscodeintellicode"
+            ],
+            "settings": {
+                "[python]": {
+                    "editor.codeActionsOnSave": {
+                        "source.organizeImports": true
+                    },
+                    "editor.formatOnSave": true
+                },
+                "python.defaultInterpreterPath": "/opt/conda/bin/python",
+                "python.formatting.blackArgs": [
+                    "-t py38",
+                    "--include '(\\.pyi?)$'"
+                ],
+                "python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+                "python.formatting.provider": "black",
+                "python.linting.flake8Args": [
+                    "--ignore E203,W503,W504,E501,E731,E741"
+                ]
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "installTools": true,
+            "installJupyterlab": true,
+            "version": "os-provided"
+        },
+        "ghcr.io/devcontainers/features/rust:1": {
+            "version": "latest",
+            "profile": "minimal"
+        },
+        "ghcr.io/devcontainers-contrib/features/ffmpeg-apt-get:1": {}
+    },
+    "onCreateCommand": "conda init bash && sudo cp .devcontainer/first-run-notice.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
+    "postCreateCommand": "/opt/conda/bin/python -m pip install .[dev]",
+    "remoteUser": "vscode",
+    "waitFor": "postCreateCommand"
+}
