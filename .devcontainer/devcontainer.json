@@ -7,13 +7,13 @@
                 "ms-python.python",
                 "ms-toolsai.jupyter"
             ],
-            "python.defaultInterpreterPath": "/opt/conda/bin/python3.10"
+            "python.defaultInterpreterPath": "/opt/conda/bin/python"
         }
     },
     "features": {
         "ghcr.io/devcontainers-contrib/features/ffmpeg-apt-get:1": {}
     },
     "onCreateCommand": "conda init bash && sudo cp .devcontainer/first-run-notice.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt",
-    "updateContentCommand": "/opt/conda/bin/python3.10 -m pip install .[dev]",
+    "updateContentCommand": "/opt/conda/bin/python -m pip install .[dev]",
     "remoteUser": "vscode"
 }
